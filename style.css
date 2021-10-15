@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+
+body {
+  font-family: "Comfortaa", cursive;
+  margin: auto;
+}
+
+header {
+  height: 110px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 3rem; /* Footer height */
+}
+
+.navbar {
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  top: 0;
+  background: #decbf5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+}
+
+.nav_buttons {
+  display: flex;
+  align-items: center;
+}
+
+.nav_buttons ul {
+  display: flex;
+}
+
+.nav_buttons a {
+  border: solid 1px;
+}
+
+.navbar .nav_logo img {
+  height: 80px;
+  margin-top: 5px;
+  margin-left: 10px;
+  filter: contrast(175%);
+}
+
+.navbar ul li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.navbar ul li a {
+  display: block;
+  text-align: center;
+  padding: 5px 20px;
+  color: #363636;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #f1f1f1;
+}
+
+/* MAP */
+.map_section {
+  position: static;
+  text-align: center;
+  padding: 30px;
+}
+
+.country:hover {
+  cursor: pointer;
+}
+
+/* ANCHOR */
+a.anchor {
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+}
+
+/* SEARCHBAR */
+.searchbar_section {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  padding: 50px 0px 50px 0px;
+}
+
+.searchbar {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+
+.search {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  width: 50%;
+  padding: 2px 23px 2px 23px;
+  background-color: #f5f5f5;
+}
+
+.search_button {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 36px;
+  padding: 2px 23px 2px 23px;
+  background-color: #f5f5f5;
+}
+
+.search_button:hover {
+  border: 2px solid #363636;
+  background-color: white;
+}
+
+.search:hover {
+  border: 2px solid #363636;
+  background-color: white;
+}
+
+/* TRAVEL EXPERIENCES */
+h1 {
+  text-align: center;
+}
+.experiences_container {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  color: black;
+}
+
+.card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
+.card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 180px;
+}
+.card-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tag-blue {
+  background-color: #0466c8;
+}
+.tag-purple {
+  background-color: #7209b7;
+}
+.tag-pink {
+  background-color: #cd5b9f;
+}
+.tag-orange {
+  background-color: #f77f00;
+}
+.tag-yellow {
+  background-color: #ffd60a;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #decbf5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_logo img {
+  height: 80px;
+  margin-top: 5px;
+  margin-left: 10px;
+  filter: contrast(180%);
+}
+
+.footer_links {
+  display: flex;
+  list-style: none;
+}
+
+.footer_link {
+  text-align: center;
+  margin: 0 10px;
+  color: #363636;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer_link:hover {
+  color: #f1f1f1;
+}
+
+.footer_icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 10px;
+  list-style: none;
+}
+
+.footer_icon img {
+  filter: contrast(80%);
+}

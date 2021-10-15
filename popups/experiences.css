@@ -1,0 +1,56 @@
+.section_1 {
+  position: relative;
+  text-align: center;
+  z-index: -1;
+}
+
+.section_1 img {
+  min-width: 100%;
+}
+
+.description {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.section_2 {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.column {
+  flex: 20%;
+  justify-content: space-between;
+  margin: auto;
+  height: auto;
+  width: 20vw;
+}
+
+.column img {
+  height: auto;
+  width: 20vw;
+}
+
+.column iframe {
+  width: 20vw;
+  height: 22vh;
+}
+
+.column p {
+  text-align: left;
+  max-width: 95%;
+}
