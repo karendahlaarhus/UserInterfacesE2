@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <h2>Log in</h2>
+    <div>
+      <label class="input_label">Username:</label>
+      <input type="text" name="username" id="username_login" />
+
+      <label class="input_label">Username:</label>
+      <input type="password" name="password" id="password_login" />
+
+      <button id="login_button" onclick="login()">Log in</button>
+
+      <p id="output_login"></p>
+    </div>
+
+    <h1>Signup</h1>
+    <div id="signup_form">
+      <p class="form_section_title">Account information</p>
+
+      <label class="input_label">Username:</label>
+      <input type="text" id="username_input" class="form_input" />
+
+      <label class="input_label">Password:</label>
+      <input type="text" id="password_input" class="form_input" />
+
+      <p class="form_section_title">Personal information</p>
+      <label class="input_label">Name: </label>
+      <input type="text" id="firstname_input" class="form_input" />
+
+      <label class="input_label">Surname: </label>
+      <input type="text" id="surname_input" class="form_input" />
+
+      <label class="input_label">Email: </label>
+      <input type="email" id="email_input" class="form_input" />
+
+      <label class="input_label">Date of birth: </label>
+      <input type="text" id="birthdate_input" class="form_input" />
+
+      <label class="input_label">Profile picture: </label>
+      <input type="image" id="profileimg_input" class="form_input" />
+
+      <label class="input_label"
+        >I have read and accepted the Terms of Use</label
+      >
+      <input type="checkbox" id="terms" class="form_input" /><br />
+
+      <button>Save</button>
+      <button>Delete</button>
+
+      <button id="signup_button" onclick="signup()">Sign up</button>
+      <p id="output_signup"></p>
+    </div>
+    <script src="script/signup.js"></script>
+  </body>
+</html>

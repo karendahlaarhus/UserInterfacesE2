@@ -26,6 +26,7 @@ header {
   background: #decbf5;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .nav_logo {
@@ -158,6 +159,7 @@ h1 {
   overflow: hidden;
   width: 300px;
 }
+
 .card-header img {
   width: 100%;
   height: 200px;
