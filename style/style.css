@@ -23,7 +23,7 @@ header {
   height: 110px;
   position: fixed;
   top: 0;
-  background: #decbf5;
+  background: #a8c7bd;
   display: flex;
   justify-content: space-between;
   z-index: 1;
@@ -83,7 +83,7 @@ header {
 .navbar_signedin {
   display: none;
   align-items: center;
-  background: #decbf5;
+  background: #a8c7bd;
   justify-content: space-between;
   padding-top: 40px;
 }
@@ -104,7 +104,7 @@ header {
 }
 
 .dropdown {
-  float: right;
+  float: left;
 }
 
 .dropdown .dropbtn {
@@ -125,18 +125,15 @@ header {
 .dropdown_content {
   display: none;
   position: absolute;
-  background-color: #decbf5;
-  min-width: 150px;
-  padding-top: 38px;
+  background-color: #a8c7bd;
+  padding-top: 35px;
   z-index: 1;
 }
 
 .dropdown_content a {
   color: #363636;
   text-decoration: none;
-  float: right;
-  font-size: 12px;
-  text-align: end;
+  font-size: 20px;
 }
 
 .dropdown_content a:hover {
@@ -304,7 +301,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 70px;
-  background-color: #decbf5;
+  background-color: #a8c7bd;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -345,104 +342,71 @@ footer {
 .footer_icon img {
   filter: contrast(80%);
 }
-
-/* Adjusting for tablet */
-@media screen and (max-width: 800px) {
+/* Adding breakpoint to make responsive */
+@media screen and (max-width: 950px) {
   .navbar_signedin {
     display: none;
-    padding-top: 0;
     float: right;
+    margin-top: -70px;
   }
-
-  .navbar ul li a {
-    font-size: 12px;
-  }
-
-  .navbar .nav_logo img {
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-
-  .navbar_signedout {
-    float: right;
-  }
-
-  .navbar_signedin a {
-    font-size: 12px;
-  }
-
-  .navbar_signedin a img {
-    height: 40px;
-    margin-top: 10px;
-  }
-
-  .navbar_signedin .dropdown_content {
-    font-size: 12px;
-    min-width: 30px;
-    padding-top: 20px;
-  }
-
-  .nav_buttons .dropbtn {
-    font-size: 12px;
-  }
-}
-
-/* Adjusting for smaller screen */
-@media screen and (max-width: 670px) {
-  .navbar_signedin {
-    display: none;
-  }
-
-  .navbar {
-    height: 120px;
-  }
-  .navbar ul li a {
-    font-size: 15px;
-  }
-  .navbar .nav_logo img {
-    height: 60px;
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-
-  .nav_buttons a {
-    font-size: 15px;
-  }
-
   .navbar {
     display: inline-block;
   }
 
   .navbar_signedout {
-    margin-top: -30px;
     float: right;
+    margin-top: -60px;
   }
+}
 
+/* Adjusting for tablet */
+@media screen and (max-width: 800px) {
   .navbar_signedin {
-    margin-top: -10px;
+    display: none;
     float: right;
+    padding-top: 30px;
   }
 
-  .navbar_signedin .dropdown {
-    margin-top: 15px;
+  .navbar ul li a {
+    font-size: 15px;
+  }
+
+  .navbar .nav_logo img {
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .navbar_signedout {
+    float: right;
   }
 
   .navbar_signedin a {
-    margin-top: 15px;
+    font-size: 15px;
   }
 
   .navbar_signedin a img {
-    height: 30px;
+    height: 40px;
     margin-top: -10px;
   }
 
-  .navbar_signedin .dropdown_content a {
+  .navbar_signedin .dropdown_content {
     font-size: 15px;
+    min-width: 30px;
+    padding-top: 50px;
   }
 
   .nav_buttons .dropbtn {
     font-size: 15px;
+  }
+}
+
+/*Adjusting for smaller screen*/
+@media screen and (max-width: 700px) {
+  .navbar_signedin {
+    display: none;
+    float: right;
+    padding-top: 60px;
   }
 }
 

@@ -56,21 +56,21 @@
             </div>
             <!-- Header when signed in -->
             <div class="navbar_signedin nav_buttons" id="navbar_signedin">
-              <a
-                ><img src="images/icons/avatar.png" class="profilepic" alt=""
-              /></a>
-              <a href="#"><span id="username_field"></span></a>
               <div class="dropdown">
-                <button class="dropbtn">
-                  Menu
-                  <i class="fa fa-caret-down"></i>
-                </button>
+                <button class="dropbtn">Menu</button>
                 <div class="dropdown_content">
                   <a href="#">My profile</a>
                   <a href="#">My experiences</a>
                   <a href="#" onclick="logout()">Logout</a>
                 </div>
               </div>
+              <a><span id="username_field"></span></a>
+              <a
+                ><img
+                  src="images/icons/avatar.png"
+                  class="profilepic"
+                  alt="Avatar"
+              /></a>
             </div>
           </nav>
         </header>
@@ -103,7 +103,7 @@
                   class="form_input"
                 />
               </div>
-              <button class="formBtn" onclick="login()">Log in</button>
+              <button class="form_btn" onclick="login()">Log in</button>
               <p id="output_login"></p>
             </div>
           </div>
@@ -124,30 +124,60 @@
               </p>
               <div class="input_group">
                 <label class="input_label">Username:</label>
-                <input type="text" id="username_input" class="form_input" />
+                <input
+                  type="text"
+                  id="username_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <div class="input_group">
                 <label class="input_label">Password:</label>
-                <input type="password" id="password_input" class="form_input" />
+                <input
+                  type="password"
+                  id="password_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <p class="form_section_title">
                 <strong>Personal information</strong>
               </p>
               <div class="input_group">
                 <label class="input_label">Name: </label>
-                <input type="text" id="firstname_input" class="form_input" />
+                <input
+                  type="text"
+                  id="firstname_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <div class="input_group">
                 <label class="input_label">Surname: </label>
-                <input type="text" id="surname_input" class="form_input" />
+                <input
+                  type="text"
+                  id="surname_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <div class="input_group">
                 <label class="input_label">Email: </label>
-                <input type="email" id="email_input" class="form_input" />
+                <input
+                  type="email"
+                  id="email_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <div class="input_group">
                 <label class="input_label">Date of birth: </label>
-                <input type="date" id="birthdate_input" class="form_input" />
+                <input
+                  type="date"
+                  id="birthdate_input"
+                  class="form_input"
+                  required
+                />
               </div>
               <div class="input_group">
                 <label class="input_label">Profile picture: </label>
@@ -157,9 +187,9 @@
                 <label class="input_label"
                   >I have read and accepted the Terms of Use</label
                 >
-                <input type="checkbox" id="terms" class="form_input" /><br />
+                <input type="checkbox" id="terms" class="form_input" required />
               </div>
-              <button id="signup_button" class="formBtn" onclick="signup()">
+              <button id="signup_button" class="form_btn" onclick="signup()">
                 Sign up
               </button>
               <p id="output_signup"></p>
@@ -175,309 +205,309 @@
               >×</span
             >
             <div class="description">
-              <div class="description">
-                <h1>Brazil</h1>
-                <img
-                  src="images/rio/rio_header.jpeg"
-                  alt="Jesus statue of Rio"
-                  class="main_picture"
-                />
-                <p>
-                  We visited Brazil in 2005 for family vacation, 2008 on a
-                  childrens international summer camp and in 2017 for vacation.
-                  Brazil, officially the Federative Republic of Brazil, is the
-                  largest country in both South America and Latin America. At
-                  8.5 million square kilometres (3,300,000 sq mi) and with over
-                  211 million people, Brazil is the world's fifth-largest
-                  country by area and the sixth most populous. Its capital is
-                  Brasília, and its most populous city is São Paulo.<br /><br />(Source:
-                  wikipedia.com)
-                </p>
-                <p>
-                  The largest country in South America, Brazil occupies almost
-                  half the continent. Nearly all of it is in the Southern
-                  Hemisphere, and much of it is tropical, with vast stretches of
-                  rainforest filled with exotic plants and wildlife. Brazil's
-                  7,400-kilometer Atlantic coast is lined with golden-sand
-                  beaches, and its interior is filled with mineral resources.
-                  Gold from Brazil's mines still lines the churches of Portugal,
-                  the colonial power that ruled Brazil until 1822. This strong
-                  Portuguese influence is evident in Brazil's colonial
-                  architecture, in decorative arts such as the glazed tiles in
-                  its churches and convents, and in the language. For tourists,
-                  Brazil is both a tropical paradise and an exciting cultural
-                  destination with attractions for all tastes, from idyllic
-                  beach holidays and jungle explorations to world-class art
-                  museums and the pulsing rhythms of Rio's Carnival.
-                  <br /><br />(Source: planetware.com)
-                </p>
-              </div>
+              <h1>Brazil</h1>
+              <img
+                src="images/rio/rio_header.jpeg"
+                alt="Jesus statue of Rio"
+                class="main_picture"
+              />
+              <p>
+                We visited Brazil in 2005 for family vacation, 2008 on a
+                childrens international summer camp and in 2017 for vacation.
+                Brazil, officially the Federative Republic of Brazil, is the
+                largest country in both South America and Latin America. At 8.5
+                million square kilometres (3,300,000 sq mi) and with over 211
+                million people, Brazil is the world's fifth-largest country by
+                area and the sixth most populous. Its capital is Brasília, and
+                its most populous city is São Paulo.<br /><br />(Source:
+                wikipedia.com)
+              </p>
+              <p>
+                The largest country in South America, Brazil occupies almost
+                half the continent. Nearly all of it is in the Southern
+                Hemisphere, and much of it is tropical, with vast stretches of
+                rainforest filled with exotic plants and wildlife. Brazil's
+                7,400-kilometer Atlantic coast is lined with golden-sand
+                beaches, and its interior is filled with mineral resources. Gold
+                from Brazil's mines still lines the churches of Portugal, the
+                colonial power that ruled Brazil until 1822. This strong
+                Portuguese influence is evident in Brazil's colonial
+                architecture, in decorative arts such as the glazed tiles in its
+                churches and convents, and in the language. For tourists, Brazil
+                is both a tropical paradise and an exciting cultural destination
+                with attractions for all tastes, from idyllic beach holidays and
+                jungle explorations to world-class art museums and the pulsing
+                rhythms of Rio's Carnival.
+                <br /><br />(Source: planetware.com)
+              </p>
             </div>
 
             <div class="section_2">
               <h1 class="title">Pictures and videos of Brazil</h1>
-
-              <div class="row">
-                <div class="column">
-                  <img
-                    src="images/rio/rio.jpeg"
-                    alt="Overview of Rio de Janiero"
-                  />
+              <div class="wrapper">
+                <div class="row">
+                  <div class="column">
+                    <img
+                      src="images/rio/rio.jpeg"
+                      alt="Overview of Rio de Janiero"
+                    />
+                  </div>
+                  <div class="column">
+                    <img
+                      src="images/rio/carneval.jpg"
+                      alt="Carneval of Rio de Janeiro"
+                    />
+                  </div>
+                  <div class="column">
+                    <img src="images/rio/natal.jpeg" alt="Beach in Natal" />
+                  </div>
+                  <div class="column">
+                    <img
+                      src="images/rio/favela.jpeg"
+                      alt="Favela in Rio de Janeiro"
+                    />
+                  </div>
+                  <div class="column">
+                    <img src="images/rio/rain.png" alt="Amazonas rainforest" />
+                  </div>
                 </div>
-                <div class="column">
-                  <img
-                    src="images/rio/carneval.jpg"
-                    alt="Carneval of Rio de Janeiro"
-                  />
+                <div class="row">
+                  <div class="column">
+                    <p class="col_text">
+                      Rio de Janerio, that we visited in 2017, is the most
+                      famous city of Brazil with it's colorful and loud culture
+                      of football and carnevals. Here we also find the famous
+                      Jesus statue facing the city.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      Brazil is famous for it's spectacular carnevals and samba
+                      clubs and we visited both carnevals and samba clubs in
+                      Brazil.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      The city Natal is placed by the north east coast of
+                      Brazil. Here we went with beach buggies on the sand dunes
+                      and took long walks along the sand beaches.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      The favelas of Brazil is known as the ghetto
+                      neighbourhoods of Brazil. Going through the country we saw
+                      big neighbourhoods of this kind, with plenty of childrens
+                      kites flying up in the sky.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      The outstanding rainforests of Amazonas is a very
+                      important and beautiful part of Brazil full of wildlife,
+                      which was visited by us in 2005.
+                    </p>
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="images/rio/natal.jpeg" alt="Beach in Natal" />
-                </div>
-                <div class="column">
-                  <img
-                    src="images/rio/favela.jpeg"
-                    alt="Favela in Rio de Janeiro"
-                  />
-                </div>
-                <div class="column">
-                  <img src="images/rio/rain.png" alt="Amazonas rainforest" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <p class="col_text">
-                    Rio de Janerio, that we visited in 2017, is the most famous
-                    city of Brazil with it's colorful and loud culture of
-                    football and carnevals. Here we also find the famous Jesus
-                    statue facing the city.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    Brazil is famous for it's spectacular carnevals and samba
-                    clubs and we visited both carnevals and samba clubs in
-                    Brazil.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    The city Natal is placed by the north east coast of Brazil.
-                    Here we went with beach buggies on the sand dunes and took
-                    long walks along the sand beaches.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    The favelas of Brazil is known as the ghetto neighbourhoods
-                    of Brazil. Going through the country we saw big
-                    neighbourhoods of this kind, with plenty of childrens kites
-                    flying up in the sky.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    The outstanding rainforests of Amazonas is a very important
-                    and beautiful part of Brazil full of wildlife, which was
-                    visited by us in 2005.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/gYy1RITRN9s"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/pxypMlcAczw"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/mQ6hFinSBBs"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/I0uCVTiQcew"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/oela7cDoyzY"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
+                <div class="row">
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/gYy1RITRN9s"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/pxypMlcAczw"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/mQ6hFinSBBs"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/I0uCVTiQcew"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/oela7cDoyzY"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- USA popup -->
         <div id="usa_modal" class="modal">
           <div id="usa_modal_content" class="modal_content">
             <span class="close" onclick="toggleMapPopup('usa_modal')">×</span>
             <div class="description">
-              <div class="description">
-                <h1>USA</h1>
-                <img
-                  src="images/usa/usa_header.jpg"
-                  alt="Usa"
-                  class="main_picture"
-                />
-                <p>
-                  We have visited the USA a couple of times. The first time, in
-                  2008, we went to Chicago, and some years later we visited the
-                  middle of USA, California and New York. The United States of
-                  America (USA), commonly known as the United States (US) or
-                  America, is a country primarily located in North America. It
-                  consists of 50 states, a federal district, five major
-                  unincorporated territories, 326 Indian reservations, and some
-                  minor possessions. At 3.8 million square miles (9.8 million
-                  square kilometers), it is the world's third- or fourth-largest
-                  country by total area. The United States shares significant
-                  land borders with Canada to the north and Mexico to the south,
-                  as well as limited maritime borders with the Bahamas, Cuba,
-                  and Russia. With a population of more than 331 million people,
-                  it is the third most populous country in the world. The
-                  national capital is Washington, D.C., and the most populous
-                  city is New York City.
-                </p>
-                <p>(Source: wikipedia.com)</p>
-                <p>
-                  The US is home to some of the most spectacular scenery in the
-                  world and some of the most recognizable icons on the planet.
-                  Many of the top attractions in the United States are bucket
-                  list destinations, drawing visitors from around the world.
-                  Given the size of the United States, most people plan their
-                  trips to a specific region, be it the East Coast, the
-                  Southwest, the beaches of Florida or California, or outlying
-                  regions like Hawaii and Alaska. You may want to see the city
-                  sights, or head out to the parks and natural areas. In some
-                  cases, you can easily combine the two if you plan a day trip
-                  or two.
-                </p>
-                <p>(Source: planetware.com)</p>
-              </div>
+              <h1>USA</h1>
+              <img
+                src="images/usa/usa_header.jpg"
+                alt="Usa"
+                class="main_picture"
+              />
+              <p>
+                We have visited the USA a couple of times. The first time, in
+                2008, we went to Chicago, and some years later we visited the
+                middle of USA, California and New York. The United States of
+                America (USA), commonly known as the United States (US) or
+                America, is a country primarily located in North America. It
+                consists of 50 states, a federal district, five major
+                unincorporated territories, 326 Indian reservations, and some
+                minor possessions. At 3.8 million square miles (9.8 million
+                square kilometers), it is the world's third- or fourth-largest
+                country by total area. The United States shares significant land
+                borders with Canada to the north and Mexico to the south, as
+                well as limited maritime borders with the Bahamas, Cuba, and
+                Russia. With a population of more than 331 million people, it is
+                the third most populous country in the world. The national
+                capital is Washington, D.C., and the most populous city is New
+                York City.
+              </p>
+              <p>(Source: wikipedia.com)</p>
+              <p>
+                The US is home to some of the most spectacular scenery in the
+                world and some of the most recognizable icons on the planet.
+                Many of the top attractions in the United States are bucket list
+                destinations, drawing visitors from around the world. Given the
+                size of the United States, most people plan their trips to a
+                specific region, be it the East Coast, the Southwest, the
+                beaches of Florida or California, or outlying regions like
+                Hawaii and Alaska. You may want to see the city sights, or head
+                out to the parks and natural areas. In some cases, you can
+                easily combine the two if you plan a day trip or two.
+              </p>
+              <p>(Source: planetware.com)</p>
             </div>
 
             <div class="section_2">
               <h1 class="title">Pictures and videos of USA</h1>
-              <div class="row">
-                <div class="column">
-                  <img src="images/usa/ny.png" alt="New York" />
+              <div class="wrapper">
+                <div class="row">
+                  <div class="column">
+                    <img src="images/usa/ny.png" alt="New York" />
+                  </div>
+                  <div class="column">
+                    <img src="images/usa/chicago.png" alt="Chicago" />
+                  </div>
+                  <div class="column">
+                    <img src="images/usa/nature.jpg" alt="Colorado Nature" />
+                  </div>
+                  <div class="column">
+                    <img src="images/usa/mount.jpg" alt="Mount Rushmore" />
+                  </div>
+                  <div class="column">
+                    <img src="images/usa/cali.png" alt="San Fransisco" />
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="images/usa/chicago.png" alt="Chicago" />
+                <div class="row">
+                  <div class="column">
+                    <p class="col_text">
+                      New York is the city of all cities. We visited it in 2017
+                      and experienced the vibrant city life with shopping and
+                      amazing broadway shows.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      We went to Chicago in 2008 and visited museums, went to
+                      Navy Pier and saw the big bean. A fantastic city to travel
+                      to!
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      In 2012 we went to Colorado to explore the nature. We went
+                      up the mountain Pikes Peak and went white water rafting.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      Mount Rushmore, South Dakota, is a mountain monument of
+                      some of USAs greatest preidents. Well worth a visit!
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      In San Fransisco, California, we visited the Golden Gate
+                      Bridge, ate alot of ice cream and had picknick in Alamo
+                      Square Park.
+                    </p>
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="images/usa/nature.jpg" alt="Colorado Nature" />
-                </div>
-                <div class="column">
-                  <img src="images/usa/mount.jpg" alt="Mount Rushmore" />
-                </div>
-                <div class="column">
-                  <img src="images/usa/cali.png" alt="San Fransisco" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <p class="col_text">
-                    New York is the city of all cities. We visited it in 2017
-                    and experienced the vibrant city life with shopping and
-                    amazing broadway shows.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    We went to Chicago in 2008 and visited museums, went to Navy
-                    Pier and saw the big bean. A fantastic city to travel to!
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    In 2012 we went to Colorado to explore the nature. We went
-                    up the mountain Pikes Peak and went white water rafting.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    Mount Rushmore, South Dakota, is a mountain monument of some
-                    of USAs greatest preidents. Well worth a visit!
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    In San Fransisco, California, we visited the Golden Gate
-                    Bridge, ate alot of ice cream and had picknick in Alamo
-                    Square Park.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/MtCMtC50gwY"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/QSwvg9Rv2EI"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/SwIB-QlxNCo"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/1FBUXRhn-Hc"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/Oo6iAxf4si0"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
+                <div class="row">
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/MtCMtC50gwY"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/QSwvg9Rv2EI"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/SwIB-QlxNCo"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/1FBUXRhn-Hc"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/Oo6iAxf4si0"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
@@ -491,157 +521,162 @@
               >×</span
             >
             <div class="description">
-              <div class="description">
-                <h1>Sweden</h1>
-                <img
-                  src="images/stockholm/header.jpeg"
-                  alt="Stockholm"
-                  class="main_picture"
-                />
+              <h1>Sweden</h1>
+              <img
+                src="images/stockholm/header.jpeg"
+                alt="Stockholm"
+                class="main_picture"
+              />
 
-                <h3>Northern Sweden</h3>
-                <p>
-                  The northern part of Sweden offers a wide range of things to
-                  do, regardless of season. During early summer, you can enjoy
-                  the unique Midnight Sun. In winter, the spectacular Northern
-                  Lights, known as the greatest light show on earth, can be seen
-                  in Swedish Lapland. Northern Sweden is also home to the Sami,
-                  one of the world’s indigenous people.
-                </p>
-                <h3>Middle Sweden</h3>
-                <p>
-                  Central Sweden offers a wide variety of places to visit – from
-                  the capital of Stockholm in the east to the vast forests in
-                  the west. Stockholm offers a mix of urban adventures and
-                  centuries-old history, with the archipelago just a boat ride
-                  away. Dalarna is the place to go for a traditional Midsummer
-                  celebration, whereas Värmland allows you to encounter the
-                  wildlife in its natural habitat.
-                </p>
-                <h3>Southern Sweden</h3>
-                <p>
-                  The southern part of Sweden is a holiday favourite for Swedes.
-                  The islands of Öland and Gotland are sprinkled with historical
-                  sites, unique nature and local flavours. In Skåne, you’ll find
-                  yellow canola fields and the locally grown produce that the
-                  region is renowned for the forward-thinking city of Malmö
-                  features some of Sweden’s most progressive cuisine. On the
-                  west coast, the city of Gothenburg and the surrounding
-                  archipelago, offer seafood, outdoor adventures and stunning
-                  views.
-                </p>
-                <p>Source: visitsweden.com</p>
-              </div>
+              <h3>Northern Sweden</h3>
+              <p>
+                The northern part of Sweden offers a wide range of things to do,
+                regardless of season. During early summer, you can enjoy the
+                unique Midnight Sun. In winter, the spectacular Northern Lights,
+                known as the greatest light show on earth, can be seen in
+                Swedish Lapland. Northern Sweden is also home to the Sami, one
+                of the world’s indigenous people.
+              </p>
+              <h3>Middle Sweden</h3>
+              <p>
+                Central Sweden offers a wide variety of places to visit – from
+                the capital of Stockholm in the east to the vast forests in the
+                west. Stockholm offers a mix of urban adventures and
+                centuries-old history, with the archipelago just a boat ride
+                away. Dalarna is the place to go for a traditional Midsummer
+                celebration, whereas Värmland allows you to encounter the
+                wildlife in its natural habitat.
+              </p>
+              <h3>Southern Sweden</h3>
+              <p>
+                The southern part of Sweden is a holiday favourite for Swedes.
+                The islands of Öland and Gotland are sprinkled with historical
+                sites, unique nature and local flavours. In Skåne, you’ll find
+                yellow canola fields and the locally grown produce that the
+                region is renowned for the forward-thinking city of Malmö
+                features some of Sweden’s most progressive cuisine. On the west
+                coast, the city of Gothenburg and the surrounding archipelago,
+                offer seafood, outdoor adventures and stunning views.
+              </p>
+              <p>Source: visitsweden.com</p>
             </div>
 
             <div class="section_2">
               <h1 class="title">Pictures and videos of Sweden</h1>
-
-              <div class="row">
-                <div class="column">
-                  <img src="images/stockholm/stockholm.jpeg" alt="Stockholm" />
+              <div class="wrapper">
+                <div class="row">
+                  <div class="column">
+                    <img
+                      src="images/stockholm/stockholm.jpeg"
+                      alt="Stockholm"
+                    />
+                  </div>
+                  <div class="column">
+                    <img src="images/stockholm/grave.jpeg" alt="Norrland" />
+                  </div>
+                  <div class="column">
+                    <img
+                      src="images/stockholm/skaane.jpeg"
+                      alt="Skåne county"
+                    />
+                  </div>
+                  <div class="column">
+                    <img src="images/stockholm/norrland.jpeg" alt="Norrland" />
+                  </div>
+                  <div class="column">
+                    <img
+                      src="images/stockholm/westcoast.jpeg"
+                      alt="West coast of Sweden"
+                    />
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="images/stockholm/grave.jpeg" alt="Norrland" />
+                <div class="row">
+                  <div class="column">
+                    <p class="col_text">
+                      Stockholm is the capital of Sweden which consists of
+                      several islands and beautiful architecture from the past
+                      centuries.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      In Norrland, the north of Sweden, the nature is wild, the
+                      montains are high and the northern light shines bright.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      Skåne county, in the south of Sweden is the connecting
+                      point to Europe. Here we traveled trough beautiful
+                      landscape and to the big city Malmö.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      Along the east coast of Sweden we find an idyllic
+                      archipelago with thousands of islands to travel to by
+                      boat.
+                    </p>
+                  </div>
+                  <div class="column">
+                    <p class="col_text">
+                      The west coast is the place to go if you want to
+                      experience white sand beaches, eat amazing seafood and see
+                      the sunset in the horison where the ocean meets the sky.
+                    </p>
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="images/stockholm/skaane.jpeg" alt="Skåne county" />
-                </div>
-                <div class="column">
-                  <img src="images/stockholm/norrland.jpeg" alt="Norrland" />
-                </div>
-                <div class="column">
-                  <img
-                    src="images/stockholm/westcoast.jpeg"
-                    alt="West coast of Sweden"
-                  />
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <p class="col_text">
-                    Stockholm is the capital of Sweden which consists of several
-                    islands and beautiful architecture from the past centuries.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    In Norrland, the north of Sweden, the nature is wild, the
-                    montains are high and the northern light shines bright.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    Skåne county, in the south of Sweden is the connecting point
-                    to Europe. Here we traveled trough beautiful landscape and
-                    to the big city Malmö.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    Along the east coast of Sweden we find an idyllic
-                    archipelago with thousands of islands to travel to by boat.
-                  </p>
-                </div>
-                <div class="column">
-                  <p class="col_text">
-                    The west coast is the place to go if you want to experience
-                    white sand beaches, eat amazing seafood and see the sunset
-                    in the horison where the ocean meets the sky.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/DS_6M3Nqh7k"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/FkByVD0WaE8"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/Vm2KtMkP-Tc"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/LU6WMe9qGmU"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="column">
-                  <iframe
-                    src="https://www.youtube.com/embed/_LnUVR01Cek"
-                    title="YouTube video player"
-                    class="video"
-                    allow="accelerometer; autoplay; clipboard-write;"
-                    allowfullscreen
-                  ></iframe>
+                <div class="row">
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/DS_6M3Nqh7k"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/FkByVD0WaE8"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/Vm2KtMkP-Tc"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/LU6WMe9qGmU"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="column">
+                    <iframe
+                      src="https://www.youtube.com/embed/_LnUVR01Cek"
+                      title="YouTube video player"
+                      class="video"
+                      allow="accelerometer; autoplay; clipboard-write;"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- Map -->
         <section class="map_section">
           <img

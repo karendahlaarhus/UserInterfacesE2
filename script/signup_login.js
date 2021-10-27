@@ -97,7 +97,7 @@ const login = () => {
 
   //Check if user exists
   if (!check_if_username_exists(username_input)) {
-    output_signup.innerHTML = "No user with that username exist";
+    output_login.innerHTML = "No user with that username exist";
     return;
   }
 
