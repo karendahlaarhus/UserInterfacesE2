@@ -1,12 +1,6 @@
 const navbar_signedout = document.getElementById("navbar_signedout");
 const navbar_signedin = document.getElementById("navbar_signedin");
-
-//validate email
-const validate_email = (email) => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
+const navbar_username = document.getElementById("username_field");
 
 //validate password
 const validate_password = (password) => {
@@ -14,14 +8,14 @@ const validate_password = (password) => {
   return re.test(String(password).toLowerCase());
 };
 
-//check if key exists
-const checkIfLocalstorageKeyExists = (key) => {
+//check if user key exists in localstorage
+const check_if_localstorage_exists = (key) => {
   return localStorage.getItem(key) !== null;
 };
 
-//check if user exists
-const checkIfUserExists = (username) => {
-  if (checkIfLocalstorageKeyExists("registered_users")) {
+//check if username exists
+const check_if_username_exists = (username) => {
+  if (check_if_localstorage_exists("registered_users")) {
     const registered_users = JSON.parse(
       localStorage.getItem("registered_users")
     );
@@ -47,19 +41,25 @@ const signup = () => {
   const terms = document.getElementById("terms").checked;
   const output_signup = document.getElementById("output_signup");
 
-  //Validate: password, email
+  //Validate password
+  if (!validate_password(password_input)) {
+    output_signup.innerHTML = "Password can only contain letters and numbers";
+    return;
+  }
 
-  //terms
+  //Check if user has agreed to terms
   if (!terms) {
     output_signup.innerHTML = "Terms and conditions need to be accepted";
     return;
   }
 
-  if (checkIfUserExists(username_input)) {
-    output_signup.innerHTML = "The username already exists.";
+  //Check if username has been used previously
+  if (check_if_username_exists(username_input)) {
+    output_signup.innerHTML = "This username is already in use.";
     return;
   }
 
+  //If all validators are passed, create new user
   const new_user = {
     username: username_input,
     password: password_input,
@@ -70,8 +70,9 @@ const signup = () => {
     profileimg: profileimg_input,
   };
 
-  //Add user to local storage
-  if (checkIfLocalstorageKeyExists("registered_users")) {
+  //Checks if localstorage contains a list of registered users, if so adds new user to list and set the list in localstorage again.
+  //If not, create list with the first user.
+  if (check_if_localstorage_exists("registered_users")) {
     const registered_users = JSON.parse(
       localStorage.getItem("registered_users")
     );
@@ -81,24 +82,26 @@ const signup = () => {
     localStorage.setItem("registered_users", JSON.stringify([new_user]));
   }
 
+  //Changes header based on logged in state
   navbar_signedout.style.display = "none";
   navbar_signedin.style.display = "block";
+  navbar_username.innerHTML = username_input;
   togglePopup("signup_popup");
 };
 
 const login = () => {
-  //get user input
+  //Get user input
   const username_input = document.getElementById("username_login").value;
   const password_input = document.getElementById("password_login").value;
   const output_login = document.getElementById("output_login");
 
-  //check if user exists
-  if (!checkIfUserExists(username_input)) {
+  //Check if user exists
+  if (!check_if_username_exists(username_input)) {
     output_signup.innerHTML = "No user with that username exist";
     return;
   }
 
-  //get userdata with matching username
+  //Get userdata with matching username
   const registered_users = JSON.parse(localStorage.getItem("registered_users"));
   const user = registered_users.filter((registered_user) => {
     if (registered_user.username === username_input) {
@@ -106,21 +109,25 @@ const login = () => {
     }
   });
 
-  //check if password is correct
+  //Check if password is correct
   if (user[0].password == password_input) {
     localStorage.setItem("current_user", username_input);
-    output_login.innerHTML = "Logged in";
   } else {
     output_login.innerHTML = "Wrong password";
   }
 
-  navbar_signedout.style.display = "block";
-  navbar_signedin.style.display = "none";
+  navbar_signedout.style.display = "none";
+  navbar_signedin.style.display = "block";
+  navbar_username.innerHTML = user[0].username;
   togglePopup("login_popup");
 };
 
 const logout = () => {
-  //confirm
-  //update localstorage
-  //update header
+  if (confirm("You sure you want to log out?")) {
+    localStorage.setItem("current_user", "");
+    navbar_signedout.style.display = "block";
+    navbar_signedin.style.display = "none";
+  } else {
+    return;
+  }
 };

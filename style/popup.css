@@ -1,4 +1,4 @@
-/* LOGIN, SIGNUP & SMALL EXPERIENCES */
+/* STYLING FOR LOGIN-POPUP, SIGNUP-POPUP & SMALL EXPERIENCES-POPUPS*/
 .popup {
   position: fixed;
   left: 0;
@@ -9,17 +9,19 @@
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
+  z-index: 1;
 }
 
 .popup_content {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 1rem 1.5rem;
   width: 30rem;
   border-radius: 0.5rem;
+  z-index: 1;
 }
 
 .close_popup_button {
@@ -40,41 +42,51 @@
   visibility: visible;
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  z-index: 1;
 }
 
-/* MAP POP-US */
+.popup img {
+  width: 200px;
+}
+
+/* STYLING FOR MAP-POPUS */
 .modal {
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal_content {
-  /* transform: translate(-50%, -50%);
-  background-color: white;
-  margin: auto;
-  border: 1px solid #888;
-  width: 80%;
-
-   */
   position: absolute;
-  left: 40%;
   transform: translate(-50%);
   background-color: white;
   width: 70rem;
+  top: 5%;
+  left: 50%;
+  bottom: 20%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+}
+
+.modal_content img {
+  left: 10%;
+  right: 10%;
+  width: 100%;
 }
 
 .close {
-  color: #aaaaaa;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
 }
 
 .close:hover,

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/popup.css" />
     <link rel="stylesheet" href="style/experiences.css" />
+    <link rel="stylesheet" href="style/login_signup.css" />
+
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"
@@ -20,7 +22,7 @@
   <body>
     <div class="page-container">
       <div class="content-wrap">
-        <!-- Header not signed in -->
+        <!-- Header: navbar -->
         <header class="header">
           <nav class="navbar">
             <div class="nav_logo">
@@ -31,7 +33,8 @@
                 <li><a href="#experiences">Travel experiences</a></li>
               </ul>
             </div>
-            <div class="navbar_signedout" id="navbar_signedout">
+            <!-- Header when not signed in -->
+            <div class="navbar_signedout nav_buttons" id="navbar_signedout">
               <ul>
                 <li>
                   <a
@@ -51,58 +54,28 @@
                 </li>
               </ul>
             </div>
-
-            <div class="navbar_signedin" id="navbar_signedin">
-              <a href=""
+            <!-- Header when signed in -->
+            <div class="navbar_signedin nav_buttons" id="navbar_signedin">
+              <a
                 ><img src="images/icons/avatar.png" class="profilepic" alt=""
               /></a>
-              <a href="#">Username</a>
+              <a href="#"><span id="username_field"></span></a>
               <div class="dropdown">
                 <button class="dropbtn">
-                  Dropdown
+                  Menu
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown_content">
                   <a href="#">My profile</a>
                   <a href="#">My experiences</a>
-                  <a href="#">Logout</a>
+                  <a href="#" onclick="logout()">Logout</a>
                 </div>
               </div>
             </div>
           </nav>
         </header>
 
-        <!--  Header signed in 
-        <header class="header_signedin">
-          <nav class="navbar">
-            <div class="nav_logo">
-              <img src="images/icons/travel_logo.png" alt="logo" />
-              <ul class="nav_links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#experiences">Travel experiences</a></li>
-              </ul>
-            </div>
-            <div class="navbar_signedin">
-              <a href=""><img src="images/icons/avatar.png" class="profilepic" alt=""></a>
-              <a href="#">Username</a>
-              <div class="dropdown">
-                <button class="dropbtn">Dropdown
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown_content">
-                  <a href="#">My profile</a>
-                  <a href="#">My experiences</a>
-                  <a href="#">Logout</a>
-                </div>
-              </div>
-            </div>
-              
-            </div>
-          </nav>
-        </header> -->
-
-        <!-- Login popup-->
+        <!-- Login popup -->
         <div id="login_popup" class="popup">
           <div id="login_popup_content" class="popup_content">
             <span
@@ -110,23 +83,33 @@
               onclick="togglePopup('login_popup')"
               >×</span
             >
-
-            <h2>Log in</h2>
+            <h2 class="form_header">Log in</h2>
             <div class="login_form">
-              <label class="input_label">Username:</label>
-              <input type="text" name="username" id="username_login" />
-
-              <label class="input_label">Username:</label>
-              <input type="password" name="password" id="password_login" />
-
-              <button id="login_button" onclick="login()">Log in</button>
-
+              <div class="input_group">
+                <label class="input_label">Username:</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username_login"
+                  class="form_input"
+                />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password_login"
+                  class="form_input"
+                />
+              </div>
+              <button class="formBtn" onclick="login()">Log in</button>
               <p id="output_login"></p>
             </div>
           </div>
         </div>
 
-        <!-- Signup -->
+        <!-- Signup popup -->
         <div id="signup_popup" class="popup">
           <div id="signup_popup_content" class="popup_content">
             <span
@@ -134,42 +117,51 @@
               onclick="togglePopup('signup_popup')"
               >×</span
             >
-
-            <h2>Sign up</h2>
+            <h2 class="form_header">Sign up</h2>
             <div id="signup_form">
-              <p class="form_section_title">Account information</p>
-
-              <label class="input_label">Username:</label>
-              <input type="text" id="username_input" class="form_input" />
-
-              <label class="input_label">Password:</label>
-              <input type="text" id="password_input" class="form_input" />
-
-              <p class="form_section_title">Personal information</p>
-              <label class="input_label">Name: </label>
-              <input type="text" id="firstname_input" class="form_input" />
-
-              <label class="input_label">Surname: </label>
-              <input type="text" id="surname_input" class="form_input" />
-
-              <label class="input_label">Email: </label>
-              <input type="email" id="email_input" class="form_input" />
-
-              <label class="input_label">Date of birth: </label>
-              <input type="text" id="birthdate_input" class="form_input" />
-
-              <label class="input_label">Profile picture: </label>
-              <input type="image" id="profileimg_input" class="form_input" />
-
-              <label class="input_label"
-                >I have read and accepted the Terms of Use</label
-              >
-              <input type="checkbox" id="terms" class="form_input" /><br />
-
-              <button>Save</button>
-              <button>Delete</button>
-
-              <button id="signup_button" onclick="signup()">Sign up</button>
+              <p class="form_section_title">
+                <strong>Account information</strong>
+              </p>
+              <div class="input_group">
+                <label class="input_label">Username:</label>
+                <input type="text" id="username_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Password:</label>
+                <input type="password" id="password_input" class="form_input" />
+              </div>
+              <p class="form_section_title">
+                <strong>Personal information</strong>
+              </p>
+              <div class="input_group">
+                <label class="input_label">Name: </label>
+                <input type="text" id="firstname_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Surname: </label>
+                <input type="text" id="surname_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Email: </label>
+                <input type="email" id="email_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Date of birth: </label>
+                <input type="date" id="birthdate_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label">Profile picture: </label>
+                <input type="file" id="profileimg_input" class="form_input" />
+              </div>
+              <div class="input_group">
+                <label class="input_label"
+                  >I have read and accepted the Terms of Use</label
+                >
+                <input type="checkbox" id="terms" class="form_input" /><br />
+              </div>
+              <button id="signup_button" class="formBtn" onclick="signup()">
+                Sign up
+              </button>
               <p id="output_signup"></p>
             </div>
           </div>
@@ -183,40 +175,48 @@
               >×</span
             >
             <div class="description">
-              <h1>Brazil</h1>
-              <p>
-                We visited Brazil in 2005 for family vacation, 2008 on a
-                childrens international summer camp and in 2017 for vacation.
-                Brazil, officially the Federative Republic of Brazil, is the
-                largest country in both South America and Latin America. At 8.5
-                million square kilometres (3,300,000 sq mi) and with over 211
-                million people, Brazil is the world's fifth-largest country by
-                area and the sixth most populous. Its capital is Brasília, and
-                its most populous city is São Paulo.<br /><br />(Source:
-                wikipedia.com)
-              </p>
-              <p>
-                The largest country in South America, Brazil occupies almost
-                half the continent. Nearly all of it is in the Southern
-                Hemisphere, and much of it is tropical, with vast stretches of
-                rainforest filled with exotic plants and wildlife. Brazil's
-                7,400-kilometer Atlantic coast is lined with golden-sand
-                beaches, and its interior is filled with mineral resources. Gold
-                from Brazil's mines still lines the churches of Portugal, the
-                colonial power that ruled Brazil until 1822. This strong
-                Portuguese influence is evident in Brazil's colonial
-                architecture, in decorative arts such as the glazed tiles in its
-                churches and convents, and in the language. For tourists, Brazil
-                is both a tropical paradise and an exciting cultural destination
-                with attractions for all tastes, from idyllic beach holidays and
-                jungle explorations to world-class art museums and the pulsing
-                rhythms of Rio's Carnival.
-                <br /><br />(Source: planetware.com)
-              </p>
+              <div class="description">
+                <h1>Brazil</h1>
+                <img
+                  src="images/rio/rio_header.jpeg"
+                  alt="Jesus statue of Rio"
+                  class="main_picture"
+                />
+                <p>
+                  We visited Brazil in 2005 for family vacation, 2008 on a
+                  childrens international summer camp and in 2017 for vacation.
+                  Brazil, officially the Federative Republic of Brazil, is the
+                  largest country in both South America and Latin America. At
+                  8.5 million square kilometres (3,300,000 sq mi) and with over
+                  211 million people, Brazil is the world's fifth-largest
+                  country by area and the sixth most populous. Its capital is
+                  Brasília, and its most populous city is São Paulo.<br /><br />(Source:
+                  wikipedia.com)
+                </p>
+                <p>
+                  The largest country in South America, Brazil occupies almost
+                  half the continent. Nearly all of it is in the Southern
+                  Hemisphere, and much of it is tropical, with vast stretches of
+                  rainforest filled with exotic plants and wildlife. Brazil's
+                  7,400-kilometer Atlantic coast is lined with golden-sand
+                  beaches, and its interior is filled with mineral resources.
+                  Gold from Brazil's mines still lines the churches of Portugal,
+                  the colonial power that ruled Brazil until 1822. This strong
+                  Portuguese influence is evident in Brazil's colonial
+                  architecture, in decorative arts such as the glazed tiles in
+                  its churches and convents, and in the language. For tourists,
+                  Brazil is both a tropical paradise and an exciting cultural
+                  destination with attractions for all tastes, from idyllic
+                  beach holidays and jungle explorations to world-class art
+                  museums and the pulsing rhythms of Rio's Carnival.
+                  <br /><br />(Source: planetware.com)
+                </p>
+              </div>
             </div>
 
-            <div class="section_2 wrapper">
+            <div class="section_2">
               <h1 class="title">Pictures and videos of Brazil</h1>
+
               <div class="row">
                 <div class="column">
                   <img
@@ -337,42 +337,50 @@
           <div id="usa_modal_content" class="modal_content">
             <span class="close" onclick="toggleMapPopup('usa_modal')">×</span>
             <div class="description">
-              <h1>USA</h1>
-              <p>
-                We have visited the USA a couple of times. The first time, in
-                2008, we went to Chicago, and some years later we visited the
-                middle of USA, California and New York. The United States of
-                America (USA), commonly known as the United States (US) or
-                America, is a country primarily located in North America. It
-                consists of 50 states, a federal district, five major
-                unincorporated territories, 326 Indian reservations, and some
-                minor possessions. At 3.8 million square miles (9.8 million
-                square kilometers), it is the world's third- or fourth-largest
-                country by total area. The United States shares significant land
-                borders with Canada to the north and Mexico to the south, as
-                well as limited maritime borders with the Bahamas, Cuba, and
-                Russia. With a population of more than 331 million people, it is
-                the third most populous country in the world. The national
-                capital is Washington, D.C., and the most populous city is New
-                York City.
-              </p>
-              <p>(Source: wikipedia.com)</p>
-              <p>
-                The US is home to some of the most spectacular scenery in the
-                world and some of the most recognizable icons on the planet.
-                Many of the top attractions in the United States are bucket list
-                destinations, drawing visitors from around the world. Given the
-                size of the United States, most people plan their trips to a
-                specific region, be it the East Coast, the Southwest, the
-                beaches of Florida or California, or outlying regions like
-                Hawaii and Alaska. You may want to see the city sights, or head
-                out to the parks and natural areas. In some cases, you can
-                easily combine the two if you plan a day trip or two.
-              </p>
-              <p>(Source: planetware.com)</p>
+              <div class="description">
+                <h1>USA</h1>
+                <img
+                  src="images/usa/usa_header.jpg"
+                  alt="Usa"
+                  class="main_picture"
+                />
+                <p>
+                  We have visited the USA a couple of times. The first time, in
+                  2008, we went to Chicago, and some years later we visited the
+                  middle of USA, California and New York. The United States of
+                  America (USA), commonly known as the United States (US) or
+                  America, is a country primarily located in North America. It
+                  consists of 50 states, a federal district, five major
+                  unincorporated territories, 326 Indian reservations, and some
+                  minor possessions. At 3.8 million square miles (9.8 million
+                  square kilometers), it is the world's third- or fourth-largest
+                  country by total area. The United States shares significant
+                  land borders with Canada to the north and Mexico to the south,
+                  as well as limited maritime borders with the Bahamas, Cuba,
+                  and Russia. With a population of more than 331 million people,
+                  it is the third most populous country in the world. The
+                  national capital is Washington, D.C., and the most populous
+                  city is New York City.
+                </p>
+                <p>(Source: wikipedia.com)</p>
+                <p>
+                  The US is home to some of the most spectacular scenery in the
+                  world and some of the most recognizable icons on the planet.
+                  Many of the top attractions in the United States are bucket
+                  list destinations, drawing visitors from around the world.
+                  Given the size of the United States, most people plan their
+                  trips to a specific region, be it the East Coast, the
+                  Southwest, the beaches of Florida or California, or outlying
+                  regions like Hawaii and Alaska. You may want to see the city
+                  sights, or head out to the parks and natural areas. In some
+                  cases, you can easily combine the two if you plan a day trip
+                  or two.
+                </p>
+                <p>(Source: planetware.com)</p>
+              </div>
             </div>
 
-            <div class="section_2 wrapper">
+            <div class="section_2">
               <h1 class="title">Pictures and videos of USA</h1>
               <div class="row">
                 <div class="column">
@@ -475,6 +483,7 @@
             </div>
           </div>
         </div>
+
         <!-- Sweden popup -->
         <div id="sweden_modal" class="modal">
           <div id="sweden_modal_content" class="modal_content">
@@ -484,6 +493,12 @@
             <div class="description">
               <div class="description">
                 <h1>Sweden</h1>
+                <img
+                  src="images/stockholm/header.jpeg"
+                  alt="Stockholm"
+                  class="main_picture"
+                />
+
                 <h3>Northern Sweden</h3>
                 <p>
                   The northern part of Sweden offers a wide range of things to
@@ -686,14 +701,160 @@
           Nothing found! Reset and search for something else.
         </h3>
 
+        <!-- experiences-popups -->
+        <div id="bali_popup" class="popup">
+          <div id="bali_popup_content" class="popup_content">
+            <span class="close_popup_button" onclick="togglePopup('bali_popup')"
+              >×</span
+            >
+            <h4>Bali, Indonesia</h4>
+            <img src="images/travel_section/bali.png" alt="bali" />
+
+            <p>
+              A magical blend of culture, people, nature, culinary delights,
+              nightlife, and beautiful accommodation. Bali is rated as one of
+              the best travel destinations in the world
+            </p>
+          </div>
+        </div>
+        <div id="capetown_popup" class="popup">
+          <div id="capetown_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('capetown_popup')"
+              >×</span
+            >
+            <h4>Cape Town, South Africa</h4>
+            <img src="images/travel_section/capetown.png" alt="bali" />
+
+            <p>
+              Cape Town, is a stunningly beautiful city of Africa, crowned by
+              the magnificent Table Mountain National Park.
+            </p>
+          </div>
+        </div>
+        <div id="rio_popup" class="popup">
+          <div id="rio_popup_content" class="popup_content">
+            <span class="close_popup_button" onclick="togglePopup('rio_popup')"
+              >×</span
+            >
+            <h4>Rio de Janeiro, Brazil</h4>
+            <img src="images/travel_section/rio_canival.png" alt="bali" />
+
+            <p>
+              In Rio de Janeiro every day is a party, with white-sand beaches,
+              bass-forward nightlife, and five heady days of Carnival bacchanal
+              celebrations in February or March.
+            </p>
+          </div>
+        </div>
+        <div id="lofoten_popup" class="popup">
+          <div id="lofoten_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('lofoten_popup')"
+              >×</span
+            >
+            <h4>Lofoten, Norway</h4>
+            <img src="images/travel_section/lofoten.png" alt="bali" />
+
+            <p>
+              The Lofoten Islands in Norway are undeniably beautiful, with the
+              fjords, montains and the northen lights.
+            </p>
+          </div>
+        </div>
+        <div id="marrocco_popup" class="popup">
+          <div id="marrocco_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('marrocco_popup')"
+              >×</span
+            >
+            <h4>Marrocco</h4>
+            <img src="images/travel_section/marrocco.png" alt="bali" />
+
+            <p>
+              We ate loads of couscous, drank mint tea, hiked, and absorbed the
+              sights and sounds of Morocco.
+            </p>
+          </div>
+        </div>
+        <div id="india_popup" class="popup">
+          <div id="india_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('india_popup')"
+              >×</span
+            >
+            <h4>India</h4>
+            <img src="images/travel_section/india.png" alt="bali" />
+
+            <p>
+              Travelling in India allowed us to meet people from all the world’s
+              great faiths, encounter temple rituals, and see ancient buildings
+              erected centuries before the Taj Mahal.
+            </p>
+          </div>
+        </div>
+        <div id="sydney_popup" class="popup">
+          <div id="sydney_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('sydney_popup')"
+              >×</span
+            >
+            <h4>Sydney, Australia</h4>
+            <img src="images/travel_section/sydney.png" alt="bali" />
+
+            <p>
+              We've learned that this is a city that's constantly evolving, with
+              new rooftop bars, theatre shows and designer shops popping up at
+              every turn.
+            </p>
+          </div>
+        </div>
+        <div id="santorini_popup" class="popup">
+          <div id="santorini_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('santorini_popup')"
+              >×</span
+            >
+            <h4>Santorini, Greece</h4>
+            <img src="images/travel_section/santorini.jpeg" alt="bali" />
+            <p>
+              The five villages of Fira, Oia, Imerovigli, Firostefani, and
+              Akrotiri sit atop the caldera and offer spectacular views into the
+              crater created from a 16th-century BC volcanic eruption.
+            </p>
+          </div>
+        </div>
+        <div id="stockholm_popup" class="popup">
+          <div id="stockholm_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('stockholm_popup')"
+              >×</span
+            >
+            <h4>Stockholm, Sweden</h4>
+            <img src="images/travel_section/stockholm.png" alt="bali" />
+            <p>
+              No matter how often we come to Stockholm, we're always amazed by
+              it. Everything is photogenic and picturesque – the parks, the
+              islands and the historical houses dating back hundreds of years.
+            </p>
+          </div>
+        </div>
+
         <div class="experiences_container" id="experiences-list">
-          <div class="card draggable" id="bali-card">
+          <div class="card draggable" id="bali_card">
             <div class="card-header">
               <img src="images/travel_section/bali.png" alt="bali" />
             </div>
             <div class="card-body">
               <span class="tag tag-yellow">Asia</span>
-              <h4 id="myBtn" onmouseover="" style="cursor: pointer">
+              <h4 onclick="togglePopup('bali_popup')" style="cursor: pointer">
                 Bali, Indonesia
               </h4>
               <p>
@@ -703,26 +864,28 @@
               </p>
             </div>
           </div>
-          <div class="card draggable" id="capetown-card">
+          <div class="card draggable" id="capetown_card">
             <div class="card-header">
               <img src="images/travel_section/capetown.png" alt="cape town" />
             </div>
             <div class="card-body">
               <span class="tag tag-orange">Africa</span>
-              <h4>Cape Town, South Africa</h4>
+              <h4 onclick="togglePopup('capetown_popup')">
+                Cape Town, South Africa
+              </h4>
               <p>
                 Cape Town, is a stunningly beautiful city of Africa, crowned by
                 the magnificent Table Mountain National Park.
               </p>
             </div>
           </div>
-          <div class="card draggable" id="rio-card">
+          <div class="card draggable" id="rio_card">
             <div class="card-header">
               <img src="images/travel_section/rio_canival.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-pink">South America</span>
-              <h4>Rio de Janeiro, Brazil</h4>
+              <h4 onclick="togglePopup('rio_popup')">Rio de Janeiro, Brazil</h4>
               <p>
                 In Rio de Janeiro every day is a party, with white-sand beaches,
                 bass-forward nightlife, and five heady days of Carnival
@@ -730,39 +893,39 @@
               </p>
             </div>
           </div>
-          <div class="card draggable" id="lofoten-card">
+          <div class="card draggable" id="lofoten_card">
             <div class="card-header">
               <img src="images/travel_section/lofoten.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4>Lofoten, Norway</h4>
+              <h4 onclick="togglePopup('lofoten_popup')">Lofoten, Norway</h4>
               <p>
                 The Lofoten Islands in Norway are undeniably beautiful, with the
                 fjords, montains and the northen lights.
               </p>
             </div>
           </div>
-          <div class="card draggable" id="marocco-card">
+          <div class="card draggable" id="marocco_card">
             <div class="card-header">
               <img src="images/travel_section/marrocco.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-orange">Africa</span>
-              <h4>Marrocco</h4>
+              <h4 onclick="togglePopup('marrocco_popup')">Marrocco</h4>
               <p>
                 We ate loads of couscous, drank mint tea, hiked, and absorbed
                 the sights and sounds of Morocco.
               </p>
             </div>
           </div>
-          <div class="card draggable" id="india-card">
+          <div class="card draggable" id="india_card">
             <div class="card-header">
               <img src="images/travel_section/india.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-yellow">Asia</span>
-              <h4>India</h4>
+              <h4 onclick="togglePopup('india_popup')">India</h4>
               <p>
                 Travelling in India allowed us to meet people from all the
                 world’s great faiths, encounter temple rituals, and see ancient
@@ -770,13 +933,13 @@
               </p>
             </div>
           </div>
-          <div class="card draggable" id="sydney-card">
+          <div class="card draggable" id="sydney_card">
             <div class="card-header">
               <img src="images/travel_section/sydney.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-purple">Oceania</span>
-              <h4>Sydney, Australia</h4>
+              <h4 onclick="togglePopup('sydney_popup')">Sydney, Australia</h4>
               <p>
                 We've learned that this is a city that's constantly evolving,
                 with new rooftop bars, theatre shows and designer shops popping
@@ -784,13 +947,15 @@
               </p>
             </div>
           </div>
-          <div class="card draggable" id="santorini-card">
+          <div class="card draggable" id="santorini_card">
             <div class="card-header">
               <img src="images/travel_section/santorini.jpeg" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4>Santorini, Greece</h4>
+              <h4 onclick="togglePopup('santorini_popup')">
+                Santorini, Greece
+              </h4>
               <p>
                 The five villages of Fira, Oia, Imerovigli, Firostefani, and
                 Akrotiri sit atop the caldera and offer spectacular views into
@@ -798,13 +963,15 @@
               </p>
             </div>
           </div>
-          <div class="card draggable" id="stockholm-card">
+          <div class="card draggable" id="stockholm_card">
             <div class="card-header">
               <img src="images/travel_section/stockholm.png" alt="city" />
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4>Stockholm, Sweden</h4>
+              <h4 onclick="togglePopup('stockholm_popup')">
+                Stockholm, Sweden
+              </h4>
               <p>
                 No matter how often we come to Stockholm, we're always amazed by
                 it. Everything is photogenic and picturesque – the parks, the

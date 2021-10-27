@@ -64,3 +64,10 @@
   text-align: left;
   max-width: 95%;
 }
+
+.popup_content h4 {
+  font-size: 25px;
+}
+.card h4:hover {
+  cursor: pointer;
+}
