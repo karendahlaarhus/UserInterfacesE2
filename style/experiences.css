@@ -5,15 +5,15 @@
 }
 
 .section_1 img {
-  width: 100%; /*ändring! (ellinor)----------------- förut stod det min-width*/
+  width: 100%;
 }
 
-.section_1modal {  /*ändring! (ellinor)-----------------*/
+.section_1modal {
   position: relative;
   text-align: center;
 }
 
-.section_1modal img {   /*ändring! (ellinor)-----------------*/
+.section_1modal img {
   width: 100%;
 }
 

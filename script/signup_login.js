@@ -1,3 +1,6 @@
+const navbar_signedout = document.getElementById("navbar_signedout");
+const navbar_signedin = document.getElementById("navbar_signedin");
+
 //validate email
 const validate_email = (email) => {
   const re =
@@ -78,7 +81,9 @@ const signup = () => {
     localStorage.setItem("registered_users", JSON.stringify([new_user]));
   }
 
-  //fix header, clear form and close modal
+  navbar_signedout.style.display = "none";
+  navbar_signedin.style.display = "block";
+  togglePopup("signup_popup");
 };
 
 const login = () => {
@@ -109,7 +114,9 @@ const login = () => {
     output_login.innerHTML = "Wrong password";
   }
 
-  //update header, hide modal
+  navbar_signedout.style.display = "block";
+  navbar_signedin.style.display = "none";
+  togglePopup("login_popup");
 };
 
 const logout = () => {
