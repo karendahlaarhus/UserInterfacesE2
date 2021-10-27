@@ -5,7 +5,16 @@
 }
 
 .section_1 img {
-  min-width: 100%;
+  width: 100%; /*ändring! (ellinor)----------------- förut stod det min-width*/
+}
+
+.section_1modal {  /*ändring! (ellinor)-----------------*/
+  position: relative;
+  text-align: center;
+}
+
+.section_1modal img {   /*ändring! (ellinor)-----------------*/
+  width: 100%;
 }
 
 .description {
@@ -14,6 +23,7 @@
 }
 
 .section_2 {
+  display: grid;
   text-align: center;
   padding-top: 50px;
   margin-bottom: 100px;

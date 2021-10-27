@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/popup.css" />
-
+    <link rel="stylesheet" href="style/experiences.css" />
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"
@@ -132,13 +132,15 @@
             src="images/map/map.png"
             alt="Map of the world"
             usemap="#image_map"
+            id="image-map"
           />
+          <!--ändring (ellinor)-->
           <map name="image_map">
             <area
               class="country"
               alt="Usa"
               title="Usa"
-              id="usa-area"
+              href="usa.html"
               coords="74,108 67,126 63,135 65,153 86,164 98,161 100,170 110,167 115,179 127,167 138,167 152,167 158,180 160,163 175,151 178,141 190,132 198,124 207,116 190,118 172,130 165,130 167,119 157,128 162,116 151,109 143,104 "
               shape="poly"
             />
@@ -146,7 +148,7 @@
               class="country"
               alt="Sweden"
               title="Sweden"
-              id="sweden-area"
+              href="stockholm.html"
               coords="414,50 420,55 410,64 410,75 407,83 402,86 396,77 399,66 409,53 "
               shape="poly"
             />
@@ -154,7 +156,7 @@
               class="country"
               alt="Brazil"
               title="Brazil"
-              id="rio-area"
+              href="rio.html"
               coords="188,259 181,261 181,275 174,290 187,299 193,294 197,302 205,303 217,320 216,331 228,339 225,360 235,366 244,344 261,335 266,305 275,282 241,265 230,254 220,255 210,259 206,249 199,251 195,259 192,260 "
               shape="poly"
             />
@@ -168,28 +170,225 @@
         <a class="anchor" id="search"></a>
         <div class="searchbar_section">
           <h1>Search area</h1>
-          <input class="search" placeholder="" type="text" />
-          <button class="search_button">Search</button>
+          <input class="search" id="search_input" placeholder="" type="text" />
+          <button class="search_button" id="search_button">Search</button>
+          <!-- ändring (kanske?) (ellinor)-->
+          <button class="reset-button" id="reset-button">Reset</button>
+          <!-- ändring, även i CSS (ellinor)-->
         </div>
         <a class="anchor" id="experiences"></a>
         <!-- Experiences -->
         <h1>Travel experiences</h1>
-        <div class="experiences_container">
-          <div class="card draggable">
+        <h3 id="nothing-found-text">
+          Nothing found! Reset and search for something else.
+        </h3>
+        <!-- ändring, även i CSS (ellinor)-->
+        <div class="experiences_container" id="experiences-list">
+          <!-- ändring, även i CSS (ellinor)-->
+          <div class="card draggable" id="bali-card">
             <div class="card-header">
               <img src="images/travel_section/bali.png" alt="bali" />
             </div>
             <div class="card-body">
               <span class="tag tag-yellow">Asia</span>
-              <h4>Bali, Indonesia</h4>
+              <h4 id="myBtn" onmouseover="" style="cursor: pointer">
+                Bali, Indonesia
+              </h4>
               <p>
                 A magical blend of culture, people, nature, culinary delights,
                 nightlife, and beautiful accommodation. Bali is rated as one of
                 the best travel destinations in the world
               </p>
+              <!-------start MODAL ändring (ellinor)----------------------------------------------->
+              <!-- Trigger/Open The Modal -->
+              <!--<button id="myBtn">Open Modal</button> TA BORT!!-->
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times; </span>
+                  <p></p>
+                  <div class="page-container">
+                    <div class="content-wrap">
+                      <div class="section_1modal">
+                        <div class="intro_picture">
+                          <img
+                            src="images/rio/rio_header.jpeg"
+                            alt="Jesus statue of Rio"
+                            class="main_picture"
+                          />
+                        </div>
+
+                        <div class="description">
+                          <h1>Brazil</h1>
+                          <p>
+                            We visited Brazil in 2005 for family vacation, 2008
+                            on a childrens international summer camp and in 2017
+                            for vacation. Brazil, officially the Federative
+                            Republic of Brazil, is the largest country in both
+                            South America and Latin America. At 8.5 million
+                            square kilometres (3,300,000 sq mi) and with over
+                            211 million people, Brazil is the world's
+                            fifth-largest country by area and the sixth most
+                            populous. Its capital is Brasília, and its most
+                            populous city is São Paulo.<br /><br />(Source:
+                            wikipedia.com)
+                          </p>
+                          <p>
+                            The largest country in South America, Brazil
+                            occupies almost half the continent. Nearly all of it
+                            is in the Southern Hemisphere, and much of it is
+                            tropical, with vast stretches of rainforest filled
+                            with exotic plants and wildlife. Brazil's
+                            7,400-kilometer Atlantic coast is lined with
+                            golden-sand beaches, and its interior is filled with
+                            mineral resources. Gold from Brazil's mines still
+                            lines the churches of Portugal, the colonial power
+                            that ruled Brazil until 1822. This strong Portuguese
+                            influence is evident in Brazil's colonial
+                            architecture, in decorative arts such as the glazed
+                            tiles in its churches and convents, and in the
+                            language. For tourists, Brazil is both a tropical
+                            paradise and an exciting cultural destination with
+                            attractions for all tastes, from idyllic beach
+                            holidays and jungle explorations to world-class art
+                            museums and the pulsing rhythms of Rio's Carnival.
+                            <br /><br />(Source: planetware.com)
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="section_2 wrapper">
+                        <h1 class="title">Pictures and videos of Brazil</h1>
+                        <div class="row">
+                          <div class="column">
+                            <img
+                              src="images/rio/rio.jpeg"
+                              alt="Overview of Rio de Janiero"
+                            />
+                          </div>
+                          <div class="column">
+                            <img
+                              src="images/rio/carneval.jpg"
+                              alt="Carneval of Rio de Janeiro"
+                            />
+                          </div>
+                          <div class="column">
+                            <img
+                              src="images/rio/natal.jpeg"
+                              alt="Beach in Natal"
+                            />
+                          </div>
+                          <div class="column">
+                            <img
+                              src="images/rio/favela.jpeg"
+                              alt="Favela in Rio de Janeiro"
+                            />
+                          </div>
+                          <div class="column">
+                            <img
+                              src="images/rio/rain.png"
+                              alt="Amazonas rainforest"
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <p class="col_text">
+                              Rio de Janerio, that we visited in 2017, is the
+                              most famous city of Brazil with it's colorful and
+                              loud culture of football and carnevals. Here we
+                              also find the famous Jesus statue facing the city.
+                            </p>
+                          </div>
+                          <div class="column">
+                            <p class="col_text">
+                              Brazil is famous for it's spectacular carnevals
+                              and samba clubs and we visited both carnevals and
+                              samba clubs in Brazil.
+                            </p>
+                          </div>
+                          <div class="column">
+                            <p class="col_text">
+                              The city Natal is placed by the north east coast
+                              of Brazil. Here we went with beach buggies on the
+                              sand dunes and took long walks along the sand
+                              beaches.
+                            </p>
+                          </div>
+                          <div class="column">
+                            <p class="col_text">
+                              The favelas of Brazil is known as the ghetto
+                              neighbourhoods of Brazil. Going through the
+                              country we saw big neighbourhoods of this kind,
+                              with plenty of childrens kites flying up in the
+                              sky.
+                            </p>
+                          </div>
+                          <div class="column">
+                            <p class="col_text">
+                              The outstanding rainforests of Amazonas is a very
+                              important and beautiful part of Brazil full of
+                              wildlife, which was visited by us in 2005.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <iframe
+                              src="https://www.youtube.com/embed/gYy1RITRN9s"
+                              title="YouTube video player"
+                              class="video"
+                              allow="accelerometer; autoplay; clipboard-write;"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                          <div class="column">
+                            <iframe
+                              src="https://www.youtube.com/embed/pxypMlcAczw"
+                              title="YouTube video player"
+                              class="video"
+                              allow="accelerometer; autoplay; clipboard-write;"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                          <div class="column">
+                            <iframe
+                              src="https://www.youtube.com/embed/mQ6hFinSBBs"
+                              title="YouTube video player"
+                              class="video"
+                              allow="accelerometer; autoplay; clipboard-write;"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                          <div class="column">
+                            <iframe
+                              src="https://www.youtube.com/embed/I0uCVTiQcew"
+                              title="YouTube video player"
+                              class="video"
+                              allow="accelerometer; autoplay; clipboard-write;"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                          <div class="column">
+                            <iframe
+                              src="https://www.youtube.com/embed/oela7cDoyzY"
+                              title="YouTube video player"
+                              class="video"
+                              allow="accelerometer; autoplay; clipboard-write;"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!------- END MODAL ändring (ellinor)---------------------------------------------------->
+              </div>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="capetown-card">
             <div class="card-header">
               <img src="images/travel_section/capetown.png" alt="cape town" />
             </div>
@@ -202,7 +401,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="rio-card">
             <div class="card-header">
               <img src="images/travel_section/rio_canival.png" alt="city" />
             </div>
@@ -216,7 +415,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="lofoten-card">
             <div class="card-header">
               <img src="images/travel_section/lofoten.png" alt="city" />
             </div>
@@ -229,7 +428,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="marocco-card">
             <div class="card-header">
               <img src="images/travel_section/marrocco.png" alt="city" />
             </div>
@@ -242,7 +441,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="india-card">
             <div class="card-header">
               <img src="images/travel_section/india.png" alt="city" />
             </div>
@@ -256,7 +455,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="sydney-card">
             <div class="card-header">
               <img src="images/travel_section/sydney.png" alt="city" />
             </div>
@@ -270,7 +469,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="santorini-card">
             <div class="card-header">
               <img src="images/travel_section/santorini.jpeg" alt="city" />
             </div>
@@ -284,7 +483,7 @@
               </p>
             </div>
           </div>
-          <div class="card draggable">
+          <div class="card draggable" id="stockholm-card">
             <div class="card-header">
               <img src="images/travel_section/stockholm.png" alt="city" />
             </div>
@@ -353,5 +552,11 @@
     <script src="script/popup.js"></script>
 
     <!--  <script src="script/jquery.rwdImageMaps.min.js"></script> -->
+    <script src="./script/search.js"></script>
+    <!-- ändring (ellinor)----------------------->
+    <script src="./script/imageMapResizer.min.js"></script>
+    <!-- ändring (ellinor)------------------>
+    <script src="./script/popUpExperiences.js"></script>
+    <!-- ändring (ellinor)---------------------->
   </body>
 </html>

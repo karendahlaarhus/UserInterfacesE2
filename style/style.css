@@ -84,6 +84,10 @@ header {
   padding: 30px;
 }
 
+#image-map{                                 
+  width:100%;               /*ändring (ellinor) (before: min-width)*/
+}
+
 .country:hover {
   cursor: pointer;
 }
@@ -132,6 +136,19 @@ a.anchor {
   background-color: white;
 }
 
+.reset-button {                     /* ändring (ellinor) */
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 36px;
+  padding: 2px 23px 2px 23px;
+  background-color: #f5f5f5;
+}
+
+.reset-button:hover {               /* ändring (ellinor)*/
+  border: 2px solid #363636;
+  background-color: white;
+}
+
 .search:hover {
   border: 2px solid #363636;
   background-color: white;
@@ -141,6 +158,11 @@ a.anchor {
 h1 {
   text-align: center;
 }
+
+#nothing-found-text {           /* ändring (ellinor)*/
+  text-align: center;
+}
+
 .experiences_container {
   margin-left: 10%;
   margin-right: 10%;
@@ -203,6 +225,46 @@ h1 {
 .tag-yellow {
   background-color: #ffd60a;
 }
+/* -----------START MODAL ändring (ellinor)-------------------------------------------- */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* -----------END MODAL ändring (ellinor)--------------------------------------------- */
 
 /* FOOTER */
 footer {
