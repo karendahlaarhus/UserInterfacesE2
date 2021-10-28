@@ -30,6 +30,7 @@ const check_if_username_exists = (username) => {
   }
 };
 
+//check if email is in use
 const check_if_email_exists = (email) => {
   if (check_if_localstorage_exists("registered_users")) {
     const registered_users = JSON.parse(
@@ -46,7 +47,20 @@ const check_if_email_exists = (email) => {
   }
 };
 
+const fillUserProfile = (user) => {
+  const uname = document.getElementById("user_username");
+  const name = document.getElementById("user_name");
+  const email = document.getElementById("user_email");
+  const birthday = document.getElementById("user_birthday");
+
+  uname.innerHTML = user.username;
+  name.innerHTML = user.firstname + " " + user.surname;
+  email.innerHTML = user.email;
+  birthday.innerHTML = user.birthdate;
+};
+
 const signup = () => {
+  //get all input data from user
   const username_input = document.getElementById("username_input").value;
   const password_input = document.getElementById("password_input").value;
   const firstname_input = document.getElementById("firstname_input").value;
@@ -87,7 +101,7 @@ const signup = () => {
     return;
   }
   //Check if e-mail has been used previously
-  if (check_if_email_exists(email_input)) { //hämta in email
+  if (check_if_email_exists(email_input)) {
     output_signup.innerHTML = "This e-mail is already in use.";
     return;
   }
@@ -120,6 +134,7 @@ const signup = () => {
   navbar_signedin.style.display = "block";
   navbar_username.innerHTML = username_input;
   togglePopup("signup_popup");
+  fillUserProfile(new_user);
   clear_signup();
 };
 
@@ -150,16 +165,27 @@ const login = () => {
     output_login.innerHTML = "Wrong password";
   }
 
+  //reset header style
   navbar_signedout.style.display = "none";
   navbar_signedin.style.display = "block";
   navbar_username.innerHTML = user[0].username;
+
+  //close popup
   togglePopup("login_popup");
+
+  //fill user profile fields
+  fillUserProfile(user[0]);
+
+  //clear fields
   clear_login();
 };
 
 const logout = () => {
   if (confirm("You sure you want to log out?")) {
+    //set currentuser to empty string
     localStorage.setItem("current_user", "");
+
+    //reset header style
     navbar_signedout.style.display = "block";
     navbar_signedin.style.display = "none";
   } else {
@@ -168,6 +194,7 @@ const logout = () => {
 };
 
 const clear_signup = () => {
+  //sett all field-values to empty strings to make form ready for next user
   document.getElementById("username_input").value = "";
   document.getElementById("password_input").value = "";
   document.getElementById("email_input").value = "";
@@ -178,7 +205,9 @@ const clear_signup = () => {
   document.getElementById("terms").value = "";
   document.getElementById("output_signup").value = "";
 };
+
 const clear_login = () => {
+  //sett all field-values to empty strings to make form ready for next user
   document.getElementById("username_login").value = "";
   document.getElementById("password_login").value = "";
 };

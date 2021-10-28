@@ -8,14 +8,8 @@
     <link rel="stylesheet" href="style/popup.css" />
     <link rel="stylesheet" href="style/experiences.css" />
     <link rel="stylesheet" href="style/login_signup.css" />
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
     <title>Exercise 2</title>
   </head>
   <body>
@@ -59,7 +53,9 @@
                 <button class="dropbtn">Menu</button>
                 <div class="dropdown_content">
                   <a onclick="togglePopup('profile_popup')">My profile</a>
-                  <a href="#">My experiences</a>
+                  <a onclick="togglePopup('my_experiences_popup')"
+                    >My experiences</a
+                  >
                   <a href="#" onclick="logout()">Logout</a>
                 </div>
               </div>
@@ -211,7 +207,7 @@
           </div>
         </div>
 
-        <!-- User profile popups -->
+        <!-- User profile popup -->
         <div id="profile_popup" class="popup">
           <div id="profile_popup_content" class="popup_content">
             <span
@@ -220,26 +216,40 @@
               >×</span
             >
             <h2 class="form_header">User profile</h2>
-            <div class="login_form">
-              <div class="input_group">
-                <label class="input_label">Username:</label>
-                <p id="user_username"></p>
+            <div class="user_profile">
+              <div class="profile_group">
+                <label class="input_label">Username: </label>
+                <p class="profile_label" id="user_username"></p>
               </div>
-              <div class="input_group">
-                <label class="input_label">Name:</label>
-                <p id="user_name"></p>
+              <div class="profile_group">
+                <label class="input_label">Name: </label>
+                <p class="profile_label" id="user_name"></p>
               </div>
-              <div class="input_group">
-                <label class="input_label">Email:</label>
-                <p id="user_email"></p>
+              <div class="profile_group">
+                <label class="input_label">Email: </label>
+                <p class="profile_label" id="user_email"></p>
               </div>
-              <div class="input_group">
-                <label class="input_label">Birthday:</label>
-                <p id="user_birthday"></p>
+              <div class="profile_group">
+                <label class="input_label">Birthday: </label>
+                <p class="profile_label" id="user_birthday"></p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- My experiences popup -->
+        <div id="my_experiences_popup" class="popup">
+          <div id="my_experiences_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('my_experiences_popup')"
+              >×</span
+            >
+            <h2 class="form_header">My experiences</h2>
+            <p>Todo</p>
+          </div>
+        </div>
+
         <!-- Map popups -->
         <!-- Brazil popup -->
         <div id="brazil_modal" class="modal">
@@ -734,6 +744,7 @@
               alt="Usa"
               title="Usa"
               onclick="toggleMapPopup('usa_modal')"
+              href="#"
               coords="74,108 67,126 63,135
             65,153 86,164 98,161 100,170 110,167 115,179 127,167 138,167
             152,167 158,180 160,163 175,151 178,141 190,132 198,124 207,116
@@ -745,6 +756,7 @@
               alt="Sweden"
               title="Sweden"
               onclick="toggleMapPopup('sweden_modal')"
+              href="#"
               coords="414,50 420,55 410,64 410,75 407,83 402,86 396,77 399,66 409,53 "
               shape="poly"
             />
@@ -753,14 +765,15 @@
               alt="Brazil"
               title="Brazil"
               onclick="toggleMapPopup('brazil_modal')"
+              href="#"
               coords="188,259 181,261 181,275 174,290 187,299 193,294 197,302 205,303 217,320 216,331 228,339 225,360 235,366 244,344 261,335 266,305 275,282 241,265 230,254 220,255 210,259 206,249 199,251 195,259 192,260 "
               shape="poly"
             />
           </map>
-          <p>
+          <h4>
             Click on USA, Brazil or Sweden to read more about these exciting
             travel destinations.
-          </p>
+          </h4>
         </section>
 
         <!-- Search -->
@@ -769,7 +782,7 @@
           <h1>Search area</h1>
           <input class="search" id="search_input" placeholder="" type="text" />
           <button class="search_button" id="search_button">Search</button>
-          <button class="reset-button" id="reset-button">Reset</button>
+          <button class="search_button" id="reset-button">Reset</button>
         </div>
 
         <!-- Experiences -->
@@ -779,155 +792,6 @@
           Nothing found! Reset and search for something else.
         </h3>
 
-        <!-- Travel experiences popups -->
-        <div id="bali_popup" class="popup">
-          <div id="bali_popup_content" class="popup_content">
-            <span class="close_popup_button" onclick="togglePopup('bali_popup')"
-              >×</span
-            >
-            <h4>Bali, Indonesia</h4>
-            <img src="images/travel_section/bali.png" alt="bali" />
-
-            <p>
-              A magical blend of culture, people, nature, culinary delights,
-              nightlife, and beautiful accommodation. Bali is rated as one of
-              the best travel destinations in the world
-            </p>
-          </div>
-        </div>
-        <div id="capetown_popup" class="popup">
-          <div id="capetown_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('capetown_popup')"
-              >×</span
-            >
-            <h4>Cape Town, South Africa</h4>
-            <img src="images/travel_section/capetown.png" alt="cape town" />
-
-            <p>
-              Cape Town, is a stunningly beautiful city of Africa, crowned by
-              the magnificent Table Mountain National Park.
-            </p>
-          </div>
-        </div>
-        <div id="rio_popup" class="popup">
-          <div id="rio_popup_content" class="popup_content">
-            <span class="close_popup_button" onclick="togglePopup('rio_popup')"
-              >×</span
-            >
-            <h4>Rio de Janeiro, Brazil</h4>
-            <img
-              src="images/travel_section/rio_canival.png"
-              alt="rio de janiero"
-            />
-
-            <p>
-              In Rio de Janeiro every day is a party, with white-sand beaches,
-              bass-forward nightlife, and five heady days of Carnival bacchanal
-              celebrations in February or March.
-            </p>
-          </div>
-        </div>
-        <div id="lofoten_popup" class="popup">
-          <div id="lofoten_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('lofoten_popup')"
-              >×</span
-            >
-            <h4>Lofoten, Norway</h4>
-            <img src="images/travel_section/lofoten.png" alt="lofoten" />
-
-            <p>
-              The Lofoten Islands in Norway are undeniably beautiful, with the
-              fjords, montains and the northen lights.
-            </p>
-          </div>
-        </div>
-        <div id="marrocco_popup" class="popup">
-          <div id="marrocco_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('marrocco_popup')"
-              >×</span
-            >
-            <h4>Marrocco</h4>
-            <img src="images/travel_section/marrocco.png" alt="marrocco" />
-
-            <p>
-              We ate loads of couscous, drank mint tea, hiked, and absorbed the
-              sights and sounds of Morocco.
-            </p>
-          </div>
-        </div>
-        <div id="india_popup" class="popup">
-          <div id="india_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('india_popup')"
-              >×</span
-            >
-            <h4>India</h4>
-            <img src="images/travel_section/india.png" alt="india" />
-
-            <p>
-              Travelling in India allowed us to meet people from all the world’s
-              great faiths, encounter temple rituals, and see ancient buildings
-              erected centuries before the Taj Mahal.
-            </p>
-          </div>
-        </div>
-        <div id="sydney_popup" class="popup">
-          <div id="sydney_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('sydney_popup')"
-              >×</span
-            >
-            <h4>Sydney, Australia</h4>
-            <img src="images/travel_section/sydney.png" alt="sydney" />
-
-            <p>
-              We've learned that this is a city that's constantly evolving, with
-              new rooftop bars, theatre shows and designer shops popping up at
-              every turn.
-            </p>
-          </div>
-        </div>
-        <div id="santorini_popup" class="popup">
-          <div id="santorini_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('santorini_popup')"
-              >×</span
-            >
-            <h4>Santorini, Greece</h4>
-            <img src="images/travel_section/santorini.jpeg" alt="santorini" />
-            <p>
-              The five villages of Fira, Oia, Imerovigli, Firostefani, and
-              Akrotiri sit atop the caldera and offer spectacular views into the
-              crater created from a 16th-century BC volcanic eruption.
-            </p>
-          </div>
-        </div>
-        <div id="stockholm_popup" class="popup">
-          <div id="stockholm_popup_content" class="popup_content">
-            <span
-              class="close_popup_button"
-              onclick="togglePopup('stockholm_popup')"
-              >×</span
-            >
-            <h4>Stockholm, Sweden</h4>
-            <img src="images/travel_section/stockholm.png" alt="stockholm" />
-            <p>
-              No matter how often we come to Stockholm, we're always amazed by
-              it. Everything is photogenic and picturesque – the parks, the
-              islands and the historical houses dating back hundreds of years.
-            </p>
-          </div>
-        </div>
-
         <!-- Travel experiences grid -->
         <div class="experiences_container" id="experiences-list">
           <div class="card draggable" id="bali_card">
@@ -936,9 +800,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-yellow">Asia</span>
-              <h4 onclick="togglePopup('bali_popup')" style="cursor: pointer">
-                Bali, Indonesia
-              </h4>
+              <h4 onclick="toggleMapPopup('sweden_modal')">Bali, Indonesia</h4>
               <p>
                 A magical blend of culture, people, nature, culinary delights,
                 nightlife, and beautiful accommodation. Bali is rated as one of
@@ -952,7 +814,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-orange">Africa</span>
-              <h4 onclick="togglePopup('capetown_popup')">
+              <h4 onclick="toggleMapPopup('brazil_modal')">
                 Cape Town, South Africa
               </h4>
               <p>
@@ -970,7 +832,9 @@
             </div>
             <div class="card-body">
               <span class="tag tag-pink">South America</span>
-              <h4 onclick="togglePopup('rio_popup')">Rio de Janeiro, Brazil</h4>
+              <h4 onclick="toggleMapPopup('usa_modal')">
+                Rio de Janeiro, Brazil
+              </h4>
               <p>
                 In Rio de Janeiro every day is a party, with white-sand beaches,
                 bass-forward nightlife, and five heady days of Carnival
@@ -984,7 +848,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4 onclick="togglePopup('lofoten_popup')">Lofoten, Norway</h4>
+              <h4 onclick="toggleMapPopup('sweden_modal')">Lofoten, Norway</h4>
               <p>
                 The Lofoten Islands in Norway are undeniably beautiful, with the
                 fjords, montains and the northen lights.
@@ -997,7 +861,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-orange">Africa</span>
-              <h4 onclick="togglePopup('marrocco_popup')">Marrocco</h4>
+              <h4 onclick="toggleMapPopup('usa_modal')">Marrocco</h4>
               <p>
                 We ate loads of couscous, drank mint tea, hiked, and absorbed
                 the sights and sounds of Morocco.
@@ -1010,7 +874,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-yellow">Asia</span>
-              <h4 onclick="togglePopup('india_popup')">India</h4>
+              <h4 onclick="toggleMapPopup('sweden_modal')">India</h4>
               <p>
                 Travelling in India allowed us to meet people from all the
                 world’s great faiths, encounter temple rituals, and see ancient
@@ -1024,7 +888,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-purple">Oceania</span>
-              <h4 onclick="togglePopup('sydney_popup')">Sydney, Australia</h4>
+              <h4 onclick="toggleMapPopup('usa_modal')">Sydney, Australia</h4>
               <p>
                 We've learned that this is a city that's constantly evolving,
                 with new rooftop bars, theatre shows and designer shops popping
@@ -1038,7 +902,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4 onclick="togglePopup('santorini_popup')">
+              <h4 onclick="toggleMapPopup('brazil_modal')">
                 Santorini, Greece
               </h4>
               <p>
@@ -1054,7 +918,7 @@
             </div>
             <div class="card-body">
               <span class="tag tag-blue">Europe</span>
-              <h4 onclick="togglePopup('stockholm_popup')">
+              <h4 onclick="toggleMapPopup('sweden_modal')">
                 Stockholm, Sweden
               </h4>
               <p>

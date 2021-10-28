@@ -1,4 +1,4 @@
-//Popups: login, signup, small experiences
+//Popups: login, signup, user profile and my experiences
 var togglePopup = (popup) => {
   var popupModal = document.getElementById(popup);
   popupModal.classList.toggle("show_popup");
