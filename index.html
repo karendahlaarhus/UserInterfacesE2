@@ -58,7 +58,7 @@
               <div class="dropdown">
                 <button class="dropbtn">Menu</button>
                 <div class="dropdown_content">
-                  <a href="#">My profile</a>
+                  <a onclick="togglePopup('profile_popup')">My profile</a>
                   <a href="#">My experiences</a>
                   <a href="#" onclick="logout()">Logout</a>
                 </div>
@@ -188,6 +188,21 @@
                 >
                 <input type="checkbox" id="terms" class="form_input" required />
               </div>
+              <button
+                id="save_button"
+                class="form_btn_smaller"
+                onclick="signup()"
+              >
+                Save
+              </button>
+              <button
+                id="delete_button"
+                class="form_btn_smaller"
+                onclick="clear_signup()"
+              >
+                Delete
+              </button>
+              <br />
               <button id="signup_button" class="form_btn" onclick="signup()">
                 Sign up
               </button>
@@ -196,6 +211,35 @@
           </div>
         </div>
 
+        <!-- User profile popups -->
+        <div id="profile_popup" class="popup">
+          <div id="profile_popup_content" class="popup_content">
+            <span
+              class="close_popup_button"
+              onclick="togglePopup('profile_popup')"
+              >×</span
+            >
+            <h2 class="form_header">User profile</h2>
+            <div class="login_form">
+              <div class="input_group">
+                <label class="input_label">Username:</label>
+                <p id="user_username"></p>
+              </div>
+              <div class="input_group">
+                <label class="input_label">Name:</label>
+                <p id="user_name"></p>
+              </div>
+              <div class="input_group">
+                <label class="input_label">Email:</label>
+                <p id="user_email"></p>
+              </div>
+              <div class="input_group">
+                <label class="input_label">Birthday:</label>
+                <p id="user_birthday"></p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Map popups -->
         <!-- Brazil popup -->
         <div id="brazil_modal" class="modal">

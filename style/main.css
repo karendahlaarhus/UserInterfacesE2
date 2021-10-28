@@ -342,6 +342,7 @@ footer {
 .footer_icon img {
   filter: contrast(80%);
 }
+
 /* Adding breakpoint to make responsive */
 @media screen and (max-width: 950px) {
   .navbar_signedin {
