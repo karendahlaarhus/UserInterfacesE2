@@ -30,12 +30,28 @@ const check_if_username_exists = (username) => {
   }
 };
 
+const check_if_email_exists = (email) => {
+  if (check_if_localstorage_exists("registered_users")) {
+    const registered_users = JSON.parse(
+      localStorage.getItem("registered_users")
+    );
+    for (i in registered_users) {
+      if (registered_users[i].email === email) {
+        return true;
+      }
+    }
+    return false;
+  } else {
+    return false;
+  }
+};
+
 const signup = () => {
-  var username_input = document.getElementById("username_input").value;
+  const username_input = document.getElementById("username_input").value;
   const password_input = document.getElementById("password_input").value;
-  const firstname_input = document.getElementById("email_input").value;
+  const email_input = document.getElementById("email_input").value;
   const surname_input = document.getElementById("surname_input").value;
-  const email_input = document.getElementById("firstname_input").value;
+  const firstname_input = document.getElementById("firstname_input").value;
   const birthdate_input = document.getElementById("birthdate_input").value;
   const profileimg_input = document.getElementById("profileimg_input").value;
   const terms = document.getElementById("terms").checked;
@@ -56,6 +72,12 @@ const signup = () => {
   //Check if username has been used previously
   if (check_if_username_exists(username_input)) {
     output_signup.innerHTML = "This username is already in use.";
+    return;
+  }
+
+  //Check if e-mail has been used previously
+  if (check_if_email_exists(email_input)) { //hämta in email
+    output_signup.innerHTML = "This e-mail is already in use.";
     return;
   }
 
