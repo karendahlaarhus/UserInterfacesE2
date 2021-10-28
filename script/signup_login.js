@@ -31,11 +31,11 @@ const check_if_username_exists = (username) => {
 };
 
 const signup = () => {
-  const username_input = document.getElementById("username_input").value;
+  var username_input = document.getElementById("username_input").value;
   const password_input = document.getElementById("password_input").value;
   const firstname_input = document.getElementById("email_input").value;
   const surname_input = document.getElementById("surname_input").value;
-  const email_input = document.getElementById("username_input").value;
+  const email_input = document.getElementById("firstname_input").value;
   const birthdate_input = document.getElementById("birthdate_input").value;
   const profileimg_input = document.getElementById("profileimg_input").value;
   const terms = document.getElementById("terms").checked;
@@ -87,6 +87,7 @@ const signup = () => {
   navbar_signedin.style.display = "block";
   navbar_username.innerHTML = username_input;
   togglePopup("signup_popup");
+  clear_signup();
 };
 
 const login = () => {
@@ -120,6 +121,7 @@ const login = () => {
   navbar_signedin.style.display = "block";
   navbar_username.innerHTML = user[0].username;
   togglePopup("login_popup");
+  clear_login();
 };
 
 const logout = () => {
@@ -130,4 +132,20 @@ const logout = () => {
   } else {
     return;
   }
+};
+
+const clear_signup = () => {
+  document.getElementById("username_input").value = "";
+  document.getElementById("password_input").value = "";
+  document.getElementById("email_input").value = "";
+  document.getElementById("surname_input").value = "";
+  document.getElementById("firstname_input").value = "";
+  document.getElementById("birthdate_input").value = "";
+  document.getElementById("profileimg_input").value = "";
+  document.getElementById("terms").value = "";
+  document.getElementById("output_signup").value = "";
+};
+const clear_login = () => {
+  document.getElementById("username_login").value = "";
+  document.getElementById("password_login").value = "";
 };
