@@ -31,11 +31,11 @@ const check_if_username_exists = (username) => {
 };
 
 const signup = () => {
-  var username_input = document.getElementById("username_input").value;
+  const username_input = document.getElementById("username_input").value;
   const password_input = document.getElementById("password_input").value;
-  const firstname_input = document.getElementById("email_input").value;
+  const firstname_input = document.getElementById("firstname_input").value;
   const surname_input = document.getElementById("surname_input").value;
-  const email_input = document.getElementById("firstname_input").value;
+  const email_input = document.getElementById("email_input").value;
   const birthdate_input = document.getElementById("birthdate_input").value;
   const profileimg_input = document.getElementById("profileimg_input").value;
   const terms = document.getElementById("terms").checked;
@@ -59,6 +59,17 @@ const signup = () => {
     return;
   }
 
+  //Check that required fields are not empty
+  if (
+    username_input == "" ||
+    password_input == "" ||
+    firstname_input == "" ||
+    surname_input == "" ||
+    birthdate_input == ""
+  ) {
+    output_signup.innerHTML = "None of the required fields can be left empty.";
+    return;
+  }
   //If all validators are passed, create new user
   const new_user = {
     username: username_input,

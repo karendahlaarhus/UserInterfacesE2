@@ -14,7 +14,7 @@
 
 .popup_content {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -47,6 +47,13 @@
 
 .popup img {
   width: 200px;
+}
+
+/* Adjusting for mobile */
+@media screen and (max-width: 414px) {
+  .popup_content {
+    width: 12rem;
+  }
 }
 
 /* STYLING FOR MAP-POPUS */
@@ -104,4 +111,18 @@
   visibility: visible;
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* Adjusting for tablet */
+@media screen and (max-width: 800px) {
+  .modal_content {
+    width: 40rem;
+  }
+}
+
+/* Adjusting for mobile */
+@media screen and (max-width: 414px) {
+  .modal_content {
+    width: 20rem;
+  }
 }

@@ -400,6 +400,13 @@ footer {
   .nav_buttons .dropbtn {
     font-size: 15px;
   }
+  .experiences_container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #image-map {
+    width: 100%;
+  }
 }
 
 /*Adjusting for smaller screen*/
@@ -408,6 +415,9 @@ footer {
     display: none;
     float: right;
     padding-top: 60px;
+  }
+  #image-map {
+    width: 100%;
   }
 }
 
@@ -437,7 +447,7 @@ footer {
   }
 
   .navbar_signedin {
-    margin-top: -10px;
+    margin-top: -70px;
     float: right;
   }
 
@@ -462,5 +472,18 @@ footer {
 
   .nav_buttons .dropbtn {
     font-size: 10px;
+  }
+  #image-map {
+    width: 100%;
+  }
+  .footer {
+    height: fit-content;
+  }
+  .footer_links {
+    font-size: 10px;
+  }
+  .footer_icons {
+    margin: 0 5px;
+    height: 10px;
   }
 }
