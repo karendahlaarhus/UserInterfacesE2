@@ -30,6 +30,22 @@ const check_if_username_exists = (username) => {
   }
 };
 
+const check_if_email_exists = (email) => {
+  if (check_if_localstorage_exists("registered_users")) {
+    const registered_users = JSON.parse(
+      localStorage.getItem("registered_users")
+    );
+    for (i in registered_users) {
+      if (registered_users[i].email === email) {
+        return true;
+      }
+    }
+    return false;
+  } else {
+    return false;
+  }
+};
+
 const signup = () => {
   const username_input = document.getElementById("username_input").value;
   const password_input = document.getElementById("password_input").value;
@@ -70,6 +86,12 @@ const signup = () => {
     output_signup.innerHTML = "None of the required fields can be left empty.";
     return;
   }
+  //Check if e-mail has been used previously
+  if (check_if_email_exists(email_input)) { //hämta in email
+    output_signup.innerHTML = "This e-mail is already in use.";
+    return;
+  }
+
   //If all validators are passed, create new user
   const new_user = {
     username: username_input,
