@@ -1,6 +1,11 @@
 const navbar_signedout = document.getElementById("navbar_signedout");
 const navbar_signedin = document.getElementById("navbar_signedin");
 const navbar_username = document.getElementById("username_field");
+const changeButton = document.getElementById("change_button");
+const profile_popup = document.getElementById("profile_popup");
+const change_popup = document.getElementById("change_popup");
+
+
 
 //validate password
 const validate_password = (password) => {
@@ -52,12 +57,16 @@ const fillUserProfile = (user) => {
   const name = document.getElementById("user_name");
   const email = document.getElementById("user_email");
   const birthday = document.getElementById("user_birthday");
+  const profileImage = document.getElementById("profile_image");
 
-  uname.innerHTML = user.username;
-  name.innerHTML = user.firstname + " " + user.surname;
-  email.innerHTML = user.email;
-  birthday.innerHTML = user.birthdate;
+  uname.value = user.username;
+  name.value = user.firstname + " " + user.surname;
+  email.value = user.email;
+  birthday.value = user.birthdate;
+  profileImage.value = user.profileimg;
 };
+
+
 
 const signup = () => {
   //get all input data from user
@@ -211,3 +220,38 @@ const clear_login = () => {
   document.getElementById("username_login").value = "";
   document.getElementById("password_login").value = "";
 };
+
+const saveUser = () => {
+  const currentUser = localStorage.getItem('current_user');
+  const username = document.getElementById("user_username").value;
+  const email = document.getElementById("user_email").value;
+  const birthdate = document.getElementById("user_birthday").value;
+  const profileimg = document.getElementById("profile_image").value;
+
+  const users = JSON.parse(localStorage.getItem('registered_users'));
+  const userToUpdate = users.find(user => user.username === currentUser);
+  navbar_username.innerHTML = username;
+
+  if(userToUpdate) {
+    const updatedUser = {
+      ...userToUpdate,
+      username,
+      email,
+      birthdate,
+      profileimg
+    };
+
+    const updated = users.map(user => {
+      if(user.username === userToUpdate.username) {
+        return updatedUser;
+      }
+
+      return user
+    });
+
+    localStorage.setItem('registered_users', JSON.stringify(updated));
+    document.getElementById('profile_popup').classList.remove('show_popup');
+  }
+};
+
+changeButton.addEventListener("click", saveUser);
